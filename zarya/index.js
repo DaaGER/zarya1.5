@@ -1,7 +1,7 @@
 // us-des-apus.auroraplatform.com
 
 
-const ZARYA_PORT = process.env.port || 7080;
+const ZARYA_PORT = process.env.port || 7081;
 
 const args = process.argv.slice(2);
 const FAKE_MODE = args[0] === 'fake'
