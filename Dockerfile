@@ -10,6 +10,6 @@ COPY ./ppp/salt/states/ppp/lib/vendor/protobuf.min.js /var/app/ppp/salt/states/p
 COPY ./ppp/salt/states/ppp/lib/aspirant-worker/utex-alpaca /var/app/ppp/salt/states/ppp/lib/aspirant-worker/utex-alpaca
 
 ENV DEBUG=true
-ENV UTEX_US_DATA_SERVER_LIST=ususdt-ds-lyra.auroraplatform.com:34003
+ENV UTEX_US_DATA_SERVER_LIST=ususdt-ds-lyra2.auroraplatform.com:34005
 ENV PPP_LIB_DIR=../..
 CMD ["node", "ppp/salt/states/ppp/lib/aspirant-worker/utex-alpaca/utex-alpaca.mjs"]

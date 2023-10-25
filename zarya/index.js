@@ -568,7 +568,7 @@ async function main() {
             let pass = aurora_users[index].pass
 
             newWS(port, index, login, pass, group);
-            await timer(15000);
+            await timer(5000);
             if (FAKE_MODE) {
                 break;
             }
