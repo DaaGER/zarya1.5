@@ -1,15 +1,18 @@
 FROM node:18-slim
 
-WORKDIR /var/app
+WORKDIR /ppp
 
 #прописать в utex-alpaca import uWS from '../../uWebSockets.js/uws.js';
-COPY ./ppp/salt/states/ppp/lib/utex /var/app/ppp/salt/states/ppp/lib/utex
-COPY ./ppp/salt/states/ppp/lib/uWebSockets.js /var/app/ppp/salt/states/ppp/lib/uWebSockets.js
-COPY ./ppp/salt/states/ppp/lib/vendor/lzma /var/app/ppp/salt/states/ppp/lib/vendor/lzma
-COPY ./ppp/salt/states/ppp/lib/vendor/protobuf.min.js /var/app/ppp/salt/states/ppp/lib/vendor/protobuf.min.js
-COPY ./ppp/salt/states/ppp/lib/aspirant-worker/utex-alpaca /var/app/ppp/salt/states/ppp/lib/aspirant-worker/utex-alpaca
+#ppp/salt/states/ppp/lib/aspirant-worker/utex-alpaca/utex-alpaca.mjs
+
+COPY ./ppp/lib/utex /ppp/lib/utex
+COPY ./ppp/vendor/uWebSockets.js /ppp/vendor/uWebSockets.js
+COPY ./ppp/vendor/lzma /ppp/vendor/lzma
+COPY ./ppp/vendor/protobuf.min.js /ppp/vendor/protobuf.min.js
+COPY ./ppp/vendor/ioredis.min.js /ppp/vendor/ioredis.min.js
+COPY ./ppp/lib/aspirant-worker/utex-alpaca /ppp/lib/aspirant-worker/utex-alpaca
+COPY ./ppp/lib/aspirant-worker/utils.mjs /ppp/lib/aspirant-worker/utils.mjs
 
 ENV DEBUG=true
-ENV UTEX_US_DATA_SERVER_LIST=ususdt-ds-lyra2.auroraplatform.com:34005
-ENV PPP_LIB_DIR=../..
-CMD ["node", "ppp/salt/states/ppp/lib/aspirant-worker/utex-alpaca/utex-alpaca.mjs"]
+ENV UTEX_US_DATA_SERVER_LIST=us-chs-lyra.auroraplatform.com:34002
+CMD ["node", "/ppp/lib/aspirant-worker/utex-alpaca/utex-alpaca.mjs"]

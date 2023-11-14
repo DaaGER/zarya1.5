@@ -111,6 +111,10 @@ const colors = [
 ]
 
 let showReceived = false;
+
+let showLog=false;
+
+
 if (FAKE_MODE) {
     console.log('FAKE_MODE')
     showReceived = true;

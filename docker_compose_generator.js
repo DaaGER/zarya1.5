@@ -13,11 +13,12 @@ for (let i = 0; i < instances_count; i++) {
   aurora_instance_${i}:
     container_name: aurora_instance_${i}
     build: ./
+    restart: on-failure
     ports:
       - "${port}:24567"
     environment:
-      - DEBUG=true
       - INST_ID=${i}
+      
 `;
 }
 
