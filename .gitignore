@@ -58,3 +58,6 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+zarya/volumes.json
+zarya/groups.json
+docker-compose.yml
